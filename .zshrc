@@ -114,6 +114,7 @@ if [[ -n $SSH_CONNECTION ]]; then
 
 alias weather='curl http://wttr.in/ann_arbor'
 alias mvd2='ls -t ${HOME}/Downloads | head -n1 | xargs -Ifish mv -v "${HOME}/Downloads/fish" .'
+alias gotorepo="git remote -v | egrep -wo -m1 'http.* ' | xargs -Ifish open fish"
 
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
