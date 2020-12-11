@@ -6,7 +6,7 @@ bindkey "[C" forward-word
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
 
-cowsay "sup"
+cowsay -s "sup"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/scottbeinlich/.oh-my-zsh"
